@@ -439,7 +439,7 @@ function getCommonDirectoryPath(pathes) {
     if (about) {break;}
     $result += $a;
   }
-  return $result.slice(0, $result.lastIndexOf('\/')+1);
+  return $result.slice(0, $result.lastIndexOf('/')+1);
 }
 
 
@@ -470,7 +470,7 @@ function getMatrixProduct(m1, m2) {
       for (var k = 0; k < m1[0].length; k++) {
         sum += m1[i][k] * m2[k][j];
       }
-    result[i][j] = sum;}
+      result[i][j] = sum;}
   }
   return result;
 }
