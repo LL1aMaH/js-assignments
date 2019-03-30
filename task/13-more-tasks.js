@@ -12,7 +12,13 @@
  *   'abcdefghijklmnop',  'lmnopqrstuvwxyz'  => 'abcdefghijklmnopqrstuvwxyz'
  */
 function distinctLettersString(value1, value2) {
-  throw new Error('Not implemented');
+  var arr = (value1 + value2).split('');
+  arr = arr.sort(function ($a, $b) {
+    if ($a>$b) {return 1;}
+    if ($b>$a) {return -1;}
+    return 0;});
+  return arr = arr.filter(($value, $i) => 
+  {return arr.indexOf($value) === $i;}).join('');
 }
 
 
