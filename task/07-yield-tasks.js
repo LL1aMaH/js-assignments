@@ -33,23 +33,6 @@
  */
 function* get99BottlesOfBeer() {
   throw new Error('Not implemented'); 
-var $num = 99, $words = 'bottles of beer', $words2 = 'on the wall';
-var $words3 = 'Take one down and pass it around,', $result;
-while ($num > 0 ) {
-if ($num === 1) {$words = 'bottle of beer';}
-if (!$num%2) {$result=`${$words3} ${$num} ${$words} ${$words2}.\\n`;}
-else {$result = `${$num} ${$words} ${$words2} ${$num} ${$words}.\\n`;
-$num--;}
-} 
-if ($num === 0) {
-$result=`${$words3} no more bottles of beer on the wall.\\n`; $num--;}
-if ($num === -1) {
-$result=`No more bottles of beer ${$words2}, no more bottles of beer.`;
-$num--;}
-if ($num === -2) {
-$result=`Go to the store and buy some more, 99 bottles of beer ${$words2}`;
-} 
-return $result;
 }
 
 
