@@ -42,7 +42,7 @@ function* get99BottlesOfBeer() {
     if (b%2) {
       line = `${a} ${c}${end} ${str}, ${a} ${c}${end} of beer.`.replace
       (/\b\w/, l => l.toUpperCase()); 
-      i -= 1}
+      i -= 1;}
     else {line = `${start2}, ${a} ${c}${end} ${str}.`;}
     b +=1;
     yield `${line}`;
