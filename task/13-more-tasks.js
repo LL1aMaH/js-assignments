@@ -35,7 +35,13 @@ function distinctLettersString(value1, value2) {
  */
 
 function lowerLetters(value) {
-  throw new Error('Not implemented');
+  var $arr = value.replace(/[^a-z]/g, '').split('').sort(function ($a, $b) {;
+    if ($a>$b) {return 1;}
+    if ($b>$a) {return -1;}
+    return 0;});
+return $arr.reduce(function(acc, el) {
+  acc[el] = (acc[el] || 0) + 1;
+  return acc;}, {});
 }
 
 /**
@@ -78,7 +84,27 @@ function titleCaseConvert(title, minorWords) {
  */
 
 function calcRPN(expr) {
-  throw new Error('Not implemented');
+  const operators = {
+    '+': (x, y) => x + y,
+    '-': (x, y) => x - y,
+    '*': (x, y) => x * y,
+    '/': (x, y) => x / y
+};
+
+let evaluate = (expr) => {
+    let stack = [];
+    expr.split(' ').forEach((token) => {
+        if (token in operators) {
+            let [y, x] = [stack.pop(), stack.pop()];
+            stack.push(operators[token](x, y));
+        } else {
+            stack.push(parseFloat(token));
+        }
+    });
+    return stack.pop();
+};
+if (evaluate(expr)) return evaluate(expr);
+return 0;
 }
 
 module.exports = {
