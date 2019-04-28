@@ -33,14 +33,17 @@
  */
 function* get99BottlesOfBeer() {
   let i = 99, end = '', a = '', line = '', b = 1; 
+  const c = 'bottle'; 
   const start2 = 'Take one down and pass it around';
   const str = 'of beer on the wall';
   while (i >= 0) {
     i!==1 ? end = 's': end='';
     i===0 ? a = 'no more' : a = i;
-    if (b%2) {line = `${a} bottle${end} ${str}, ${a} bottle${end} of beer.`.replace(/\b\w/, l => l.toUpperCase()); 
+    if (b%2) {
+      line = `${a} ${c}${end} ${str}, ${a} ${c}${end} of beer.`.replace
+      (/\b\w/, l => l.toUpperCase()); 
       i -= 1}
-    else {line = `${start2}, ${a} bottle${end} ${str}.`;}
+    else {line = `${start2}, ${a} ${c}${end} ${str}.`;}
     b +=1;
     yield `${line}`;
   }
