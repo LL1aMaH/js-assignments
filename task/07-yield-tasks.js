@@ -43,7 +43,7 @@ function* get99BottlesOfBeer() {
     else a = i;
     if (b%2) {
       line = `${a} ${c}${end} ${str}, ${a} ${c}${end} of beer.`.
-      replace(/\b\w/, l => l.toUpperCase()); 
+        replace(/\b\w/, l => l.toUpperCase()); 
       i -= 1;}
     else {line = `${start2}, ${a} ${c}${end} ${str}.`;}
     b +=1;
@@ -64,7 +64,11 @@ function* get99BottlesOfBeer() {
  *
  */
 function* getFibonacciSequence() {
-  throw new Error('Not implemented');
+  [a, b] = [0, 1]
+  while (true) {
+    yield a;
+    [a, b] = [b, a + b];
+  }
 }
 
 
